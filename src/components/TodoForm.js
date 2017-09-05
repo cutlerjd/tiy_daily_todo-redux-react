@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {addTodo} from '../actions/TodoActions'
 
 class TodoForm extends Component {
     state = {
@@ -13,6 +14,7 @@ class TodoForm extends Component {
     handleSubmit = (e) =>
     {
         e.preventDefault()
+        addTodo({title:this.state.todoTitle})
         console.log(this.state.todoTitle)
         this.setState({
             todoTitle:''
