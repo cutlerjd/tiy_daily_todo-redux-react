@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {addTodo} from '../actions/TodoActions'
+import shortid from 'shortid'
 
 class TodoForm extends Component {
     state = {
@@ -14,7 +15,11 @@ class TodoForm extends Component {
     handleSubmit = (e) =>
     {
         e.preventDefault()
-        addTodo({title:this.state.todoTitle})
+        addTodo({
+            title:this.state.todoTitle,
+            active:true,
+            completed:'',
+            id:shortid.generate()})
         console.log(this.state.todoTitle)
         this.setState({
             todoTitle:''

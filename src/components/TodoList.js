@@ -9,7 +9,11 @@ class TodoList extends Component {
                 <ul>
                     {console.log(this.props.todos)}
                     {this.props.todos.map(function(todo,key){
+                        if(todo.active){
                         return <TodoItem key={key} todo={todo}/>
+                        } else{
+                            return null
+                        }
                     }.bind(this))}
                 </ul>
             </div>
