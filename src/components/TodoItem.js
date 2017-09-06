@@ -10,7 +10,7 @@ class TodoItem extends Component {
     }
     render() {
         return (
-                <li><input type="checkbox" className="filled-in" id={this.props.todo.id} checked={this.props.todo.completed} onChange={this.handleChange}/>{this.props.todo.title} <p id={this.props.todo.id} onClick={this.handleDelete}>DELETE</p></li>	
+                <li><input type="checkbox" className="filled-in" id={this.props.todo.id} checked={this.props.todo.completed} onChange={this.handleChange}/>{this.props.todo.title} -- <b id={this.props.todo.id} onClick={this.handleDelete}>DELETE</b></li>	
                 )
     }
 }

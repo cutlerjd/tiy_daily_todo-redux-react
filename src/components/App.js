@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <Provider store={store}>
       <div>
-        <h1>Base React app</h1>
+        <h1>Todo List app</h1>
         <TodoForm/>
         <TodoList/>
       </div>
