@@ -37,3 +37,10 @@ export function removeTodo(id){
         todos:todos
     })
 }
+
+export function toggleDisplayTodo(display){
+    store.dispatch(
+    {type:'TOGGLE_DISPLAY',
+    display:display}
+    )
+}
