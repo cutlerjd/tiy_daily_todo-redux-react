@@ -20,7 +20,6 @@ class TodoForm extends Component {
             active:true,
             completed:'',
             id:shortid.generate()})
-        console.log(this.state.todoTitle)
         this.setState({
             todoTitle:''
         })

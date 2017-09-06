@@ -8,11 +8,9 @@ class TodoList extends Component {
         toggleDisplayTodo(e.target.id)
     }
     render() {
-        console.log(this.props.filter)
         return (
             <div>
                 <ul>
-                    {console.log(this.props.todos)}
                     {this.props.todos.map(function (todo, key) {
                         if (todo.active && this.props.filter === 'all') {
                             return <TodoItem key={key} todo={todo} />
