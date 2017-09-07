@@ -1,17 +1,20 @@
 import React, { Component } from 'react'
 import {checkTodo,removeTodo} from '../actions/TodoActions'
+import {ListItem} from 'material-ui/List';
+import RaisedButton from 'material-ui/RaisedButton';
+import Checkbox from 'material-ui/Checkbox';
 
 class TodoItem extends Component {
     handleChange = (e) => {
-        checkTodo(e.target.id)
+        checkTodo(this.props.todo.id)
     }
     handleDelete = (e) => {
-        removeTodo(e.target.id)
+        removeTodo(this.props.todo.id)
     }
     render() {
         return (
-                <li><input type="checkbox" className="filled-in" id={this.props.todo.id} checked={this.props.todo.completed} onChange={this.handleChange}/>{this.props.todo.title} -- <b id={this.props.todo.id} onClick={this.handleDelete}>DELETE</b></li>	
-                )
+                <ListItem primaryText={this.props.todo.title} leftCheckbox={<Checkbox checked={this.props.todo.completed} onCheck={this.handleChange}/>} rightIconButton={<RaisedButton onClick={this.handleDelete} label="Delete"/>}/>
+        )
     }
 }
 

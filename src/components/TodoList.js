@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import TodoItem from './TodoItem'
 import { toggleDisplayTodo } from '../actions/TodoActions'
+import {List} from 'material-ui/List';
 
 class TodoList extends Component {
     toggleDisplay = (e) => {
@@ -10,7 +11,7 @@ class TodoList extends Component {
     render() {
         return (
             <div>
-                <ul>
+                <List>
                     {this.props.todos.map(function (todo, key) {
                         if (todo.active && this.props.filter === 'all') {
                             return <TodoItem key={key} todo={todo} />
@@ -22,7 +23,7 @@ class TodoList extends Component {
                             return null
                         }
                     }.bind(this))}
-                </ul>
+                </List>
                 <div>
                     <ul>
                         <li id="all" onClick={this.toggleDisplay}>All - ({this.props.todos.filter(i => i.active).length})</li>

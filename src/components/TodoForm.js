@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import {addTodo} from '../actions/TodoActions'
 import shortid from 'shortid'
+import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
 
 class TodoForm extends Component {
     state = {
@@ -18,7 +20,7 @@ class TodoForm extends Component {
         addTodo({
             title:this.state.todoTitle,
             active:true,
-            completed:'',
+            completed:false,
             id:shortid.generate()})
         this.setState({
             todoTitle:''
@@ -28,7 +30,7 @@ class TodoForm extends Component {
         return (
                 <div>
                 <form onSubmit={this.handleSubmit}>
-                <input type="text" value={this.state.todoTitle} onChange={this.handleChange}  name="todoTitle"/>
+                <TextField hintText="Todo item" value={this.state.todoTitle} onChange={this.handleChange}  name="todoTitle"/> <RaisedButton label="Submit" primary={true} type="submit" />
                 </form></div>	
                 )
     }

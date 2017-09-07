@@ -11,10 +11,10 @@ export function checkTodo(id){
     let appState = store.getState()
     let todos = appState.todos.map(function(todo){
         if(id === todo.id){
-            if(todo.completed === 'checked'){
-                todo.completed = ''
+            if(todo.completed){
+                todo.completed = false
             } else {
-                todo.completed = "checked"
+                todo.completed = true
             }
         }
         return todo
