@@ -3,6 +3,8 @@ import {addTodo} from '../actions/TodoActions'
 import shortid from 'shortid'
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import {ListItem} from 'material-ui/List';
+
 
 class TodoForm extends Component {
     state = {
@@ -28,10 +30,9 @@ class TodoForm extends Component {
     }
     render() {
         return (
-                <div>
-                <form onSubmit={this.handleSubmit}>
-                <TextField hintText="Todo item" value={this.state.todoTitle} onChange={this.handleChange}  name="todoTitle"/> <RaisedButton label="Submit" primary={true} type="submit" />
-                </form></div>	
+                <ListItem disabled={true}>
+                <TextField hintText="Todo item" value={this.state.todoTitle} onChange={this.handleChange}  name="todoTitle"/> <RaisedButton label="Submit" primary={true} onClick={this.handleSubmit} />
+                </ListItem>	
                 )
     }
 }

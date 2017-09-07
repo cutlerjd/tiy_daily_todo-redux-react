@@ -5,18 +5,29 @@ import TodoForm from './TodoForm'
 import TodoList from './TodoList'
 import { Provider } from 'react-redux'
 import store from '../store'
-import AppBar from 'material-ui/AppBar';
+//import AppBar from 'material-ui/AppBar';
+import {Card, CardHeader} from 'material-ui/Card';
 
+const style = {
+  width: 500,
+  margin: 20,
+  root:{
+    display: 'flex',
+    flexWrap: 'wrap',
+  }
+};
 
 class App extends Component {
   render() {
     return (
       <MuiThemeProvider>
         <Provider store={store}>
-          <div>
-            <AppBar title="Todo App" iconClassNameRight="muidocs-icon-navigation-expand-more"/>
-            <TodoForm />
+          <div className="container" style={style.root}>
+          <Card style={style}>
+          <CardHeader title="Todo App" /> 
+            <TodoForm style={style.root}/>
             <TodoList />
+          </Card>
           </div>
         </Provider>
       </MuiThemeProvider>
