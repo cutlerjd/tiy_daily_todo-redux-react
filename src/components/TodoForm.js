@@ -31,7 +31,9 @@ class TodoForm extends Component {
     render() {
         return (
                 <ListItem disabled={true}>
+                <form onSubmit={this.handleSubmit}>
                 <TextField hintText="Todo item" value={this.state.todoTitle} onChange={this.handleChange}  name="todoTitle"/> <RaisedButton label="Submit" primary={true} onClick={this.handleSubmit} />
+                </form>
                 </ListItem>	
                 )
     }
